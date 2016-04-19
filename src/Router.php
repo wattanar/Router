@@ -7,7 +7,7 @@
 		{
 			self::isTrustMethod($mapMethod);
 
-			$currentUri = self::getUri();
+			$currentUri = self::getUri("/gnix");
 			
 			if ($currentUri === $mapUri) {
 				if (is_callable(array($fn[0], $fn[1]))) {
