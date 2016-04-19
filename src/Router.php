@@ -16,8 +16,6 @@
 				} else {
 					exit('<pre>404 not found.</pre>');
 				}
-			} else {
-				exit('<pre>404 not found.</pre>');
 			}
 		}
 
