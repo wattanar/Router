@@ -1,12 +1,9 @@
-<?php 
+<?php
 
-	require "./src/Router.php";
-	require "./controllers/routes.php";
-
-	define("ROOT", "/gnix");
+	require './vendor/autoload.php';
 
 	use Gnix\Core\Router as R;
 	
-	R::map("GET", "/", ["\Gnix\App\Route", "index"]);
+	R::map('GET', '/', ['my_class', 'my_function']);
 	
 	R::notFound();
