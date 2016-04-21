@@ -1,4 +1,5 @@
 <?php  
+
 	namespace Gnix\Core;
 
 	class Router
@@ -30,12 +31,7 @@
 		public function getUri()
 		{
 			$uri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
-
-			if (ROOT !== null) {
-				return str_replace(ROOT, "", $uri);
-			} else {
-				return $uri;
-			}
+			return $uri;
 		}
 
 		public function notFound()
