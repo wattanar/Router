@@ -1,6 +1,6 @@
 <?php  
 
-	namespace Gnix;
+	namespace Gnix\Core;
 
 	class Validator
 	{

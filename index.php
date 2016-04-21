@@ -1,11 +1,12 @@
 <?php 
-	// Core
-	require './src/Router.php';
-	// Controllers
-	require './controllers/routes.php';
 
-	use Gnix\Router as R;
+	require "./src/Router.php";
+	require "./controllers/routes.php";
+
+	define("ROOT", "/gnix");
+
+	use Gnix\Core\Router as R;
 	
-	R::map('GET', '/', ['\Gnix\Route', 'index']);
+	R::map("GET", "/", ["\Gnix\App\Route", "index"]);
 	
 	R::notFound();
