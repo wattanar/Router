@@ -1,4 +1,5 @@
 <?php  
+	namespace Gnix;
 
 	class Route
 	{
