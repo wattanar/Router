@@ -31,7 +31,7 @@
 		{
 			$uri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
-			if (isset(ROOT)) {
+			if (ROOT !== null) {
 				return str_replace(ROOT, "", $uri);
 			} else {
 				return $uri;
