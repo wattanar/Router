@@ -31,7 +31,11 @@
 		{
 			$uri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
-			return str_replace(ROOT, "", $uri);
+			if (isset(ROOT)) {
+				return str_replace(ROOT, "", $uri);
+			} else {
+				return $uri;
+			}
 		}
 
 		public function notFound()
