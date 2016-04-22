@@ -6,7 +6,7 @@
 	{
 		public function isNull($var)
 		{	
-			if (trim($var) !== null) {
+			if (trim($var) !== null || trim($var) !== "") {
 				return false;
 			} else {
 				return true;
