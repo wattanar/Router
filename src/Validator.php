@@ -4,6 +4,14 @@
 
 	class Validator
 	{
+		public function isNull($var)
+		{	
+			if (trim($var) !== null) {
+				return true;
+			} else {
+				return false;
+			}
+		}
 		
 		public function __e($var)
 		{
