@@ -7,9 +7,9 @@
 		public function isNull($var)
 		{	
 			if (trim($var) !== null) {
-				return true;
-			} else {
 				return false;
+			} else {
+				return true;
 			}
 		}
 		
