@@ -1,8 +1,8 @@
 {
     "name": "wattanar/ginx",
     "type": "library",
-    "description": "Gnix Framework",
-    "keywords": ["php", "framework"],
+    "description": "Gnix Router",
+    "keywords": ["php", "router"],
     "homepage": "https://github.com/wattanar/ginx",
     "license": "MIT",
     "authors": [

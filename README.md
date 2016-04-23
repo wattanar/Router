@@ -1,2 +1,2 @@
-# GNIX
-Just another php framework.
+# GNIX Router
+Just another php router.
