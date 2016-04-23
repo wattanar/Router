@@ -16,7 +16,6 @@
 					exit;
 				}
 			}
-			return;
 		}
 
 		public function isTrustMethod($method)
@@ -36,8 +35,13 @@
 			return $uri;
 		}
 
-		public function notFound()
+		public function notFound($callback)
 		{
-			 exit("<pre>404 not found.</pre>");
+			if (is_callable($callback)) {
+				call_user_func($callback);
+			} else {
+				exit("<pre>404 not found.</pre>");
+			}
+			exit;
 		}
 	}

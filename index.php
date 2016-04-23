@@ -7,4 +7,6 @@
 	
 	R::addRoute('GET', '/', ['my_class', 'my_function']);
 	
-	R::notFound();
+	R::notFound(function() {
+		echo "404 not found.";
+	});
