@@ -1,47 +1,35 @@
-<?php  
+<?php
 
 	namespace Gnix\Core;
 
 	class Router
 	{
-		public function addRoute($mapMethod, $mapUri, $mapFunc) 
-		{
-			self::isTrustMethod($mapMethod);
+		public static $routes = array();
+		public static $methods = array();
 
-			$currentUri = self::getUri(__RootURL);
-			
-			if ($currentUri === $mapUri) {
-				if (is_callable(array($mapFunc[0], $mapFunc[1]))) {
-					call_user_func(array($mapFunc[0], $mapFunc[1]));
-					exit;
-				}
-			}
+		public function addRoute($method, $pattern, $callback) 
+		{
+			self::$routes[$pattern] = $callback;
+			self::$methods[$pattern] = strtoupper($method);
 		}
 
-		public function isTrustMethod($method)
+		public function start($url = null)
 		{
-			if ($method !== $_SERVER["REQUEST_METHOD"]) {
+			$url = explode("?", str_replace($url, "", $_SERVER["REQUEST_URI"]))[0];
+			$url = str_replace("//", "/", $url);
+
+			if (!array_key_exists($url, self::$routes)) {
 				exit("<pre>404 not found.</pre>");
 			}
-			return true;
-		}
 
-		public function getUri($baseUrl = null)
-		{
-			$uri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
-			if ($baseUrl !== null) {
-				$uri = str_replace($baseUrl, "", $uri);	
-			}
-			return $uri;
-		}
-
-		public function notFound($callback)
-		{
-			if (is_callable($callback)) {
-				call_user_func($callback);
-			} else {
+			if (!is_callable(self::$routes[$url])) {
 				exit("<pre>404 not found.</pre>");
 			}
-			exit;
+
+			if (self::$methods[$url] !== $_SERVER["REQUEST_METHOD"]) {
+				exit("<pre>Method not allow.</pre>");
+			}
+
+			call_user_func(self::$routes[$url]);
 		}
 	}
