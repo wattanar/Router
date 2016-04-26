@@ -4,6 +4,11 @@
 	{		
 		public function index()
 		{
-			echo "Hello World!";
+			echo "Hello Gnix :)";
+		}
+
+		public function name($name)
+		{
+			echo "Hello " . $name;
 		}
 	}
