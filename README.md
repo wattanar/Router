@@ -1,15 +1,12 @@
-# GNIX Router
-## How to use
+# Usage
 ```php
 <?php
 
 	require './src/Router.php';
-	require './routes.php';
 
 	use Gnix\Core\Router as R;
 
-	R::addRoute("GET", "/", array("Route", "index"));
-	R::addRoute("GET", "/hello/([a-z]+)", array("Route", "name"));
+	R::addRoute("GET", "/", array("my_class", "my_function"));
 
 	R::start("/gnix");
 ```
