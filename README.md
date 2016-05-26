@@ -6,7 +6,7 @@
 
 	use Gnix\Core\Router as R;
 
-	R::addRoute("GET", "/", array("my_class", "my_function"));
+	R::addRoute("GET", "/", ["my_class", "my_function"]);
 
 	R::start("/gnix");
 ```
