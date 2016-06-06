@@ -1,6 +1,6 @@
 <?php
 
-	namespace Gnix\Core;
+	namespace Gnix;
 
 	class Router
 	{
