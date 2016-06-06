@@ -4,16 +4,16 @@
 
 	class Router
 	{
-		public static $routes = array();
-		public static $methods = array();
+		public static $routes = [];
+		public static $methods = [];
 
 		public function addRoute($method, $pattern, $callback) 
 		{
-			self::$routes[$pattern] = $callback;
+			self::$routes[$pattern] = explode("@", $callback);
 			self::$methods[$pattern] = strtoupper($method);
 		}
 
-		public function start($url = null)
+		public function run($url = null)
 		{
 			$url = explode("?", str_replace($url, "", $_SERVER["REQUEST_URI"]))[0];
 			$url = str_replace("//", "/", $url);
