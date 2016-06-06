@@ -4,7 +4,7 @@
 
 	$app = new \Wattanar\Router();
 
-	$app->addRoute("GET", "/", "Class@Function");
+	$app->get("/", "HomeController@index");
 
 	$app->run("/gnix");
 ```
