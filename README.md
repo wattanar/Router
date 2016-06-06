@@ -2,7 +2,7 @@
 ```php
 <?php
 
-	$app = new \Gnix\Router();
+	$app = new \Wattanar\Router();
 
 	$app->addRoute("GET", "/", "Class@Function");
 
