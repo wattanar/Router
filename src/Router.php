@@ -1,6 +1,6 @@
 <?php
 
-	namespace Gnix;
+	namespace Wattanar;
 
 	class Router
 	{
