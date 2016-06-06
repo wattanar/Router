@@ -7,10 +7,16 @@
 		public static $routes = [];
 		public static $methods = [];
 
-		public function addRoute($method, $pattern, $callback) 
+		public function get($pattern, $callback) 
 		{
 			self::$routes[$pattern] = explode("@", $callback);
-			self::$methods[$pattern] = strtoupper($method);
+			self::$methods[$pattern] = strtoupper("GET");
+		}
+
+		public function post($pattern, $callback) 
+		{
+			self::$routes[$pattern] = explode("@", $callback);
+			self::$methods[$pattern] = strtoupper("POST");
 		}
 
 		public function run($url = null)
