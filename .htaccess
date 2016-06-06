@@ -1,4 +1,17 @@
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php [QSA,L]
+Options All -Indexes
+Options +FollowSymLinks
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ index.php [QSA,L]
+	RewriteCond %{QUERY_STRING} (<|%3C).*script.*(>|%3E) [NC,OR]
+	RewriteCond %{QUERY_STRING} GLOBALS(=|[|%[0-9A-Z]{0,2}) [OR]
+	RewriteCond %{QUERY_STRING} _REQUEST(=|[|%[0-9A-Z]{0,2})
+</IfModule>
+
+<FilesMatch "^.*(error_log|php.ini|\.[hH][tT][aApP].*)$">
+	Order deny,allow
+	Deny from all
+</FilesMatch>
