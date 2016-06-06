@@ -2,11 +2,9 @@
 ```php
 <?php
 
-	require './src/Router.php';
+	$app = new \Gnix\Router();
 
-	use Gnix\Core\Router as R;
+	$app->addRoute("GET", "/", "Class@Function");
 
-	R::addRoute("GET", "/", ["my_class", "my_function"]);
-
-	R::start("/gnix");
+	$app->run("/gnix");
 ```
