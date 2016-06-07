@@ -2,7 +2,7 @@
 ```php
 <?php
 
-	$app = new \Wattanar\Router();
+	$app = new \Wattanar\Gnix();
 
 	$app->get("/", "HomeController@index");
 
