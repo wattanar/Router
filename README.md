@@ -26,7 +26,7 @@ namespace App\Controller;
 
 class Home
 {
-	public function index()
+	public static function index()
 	{
 		echo "Hello World!";
 	}
