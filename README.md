@@ -1,6 +1,17 @@
+# Install
+```
+{
+	"require" : {
+		"wattanar/router" : "dev-master
+	}
+}
+```
+
 # How to use
 ```php
 <?php
+
+require 'vendor/autoload.php';
 
 $app = new \Wattanar\Router();
 
