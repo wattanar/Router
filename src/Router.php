@@ -2,7 +2,7 @@
 
 	namespace Wattanar;
 
-	class Gnix
+	class Router
 	{
 		public static $routes = [];
 		public static $methods = [];
