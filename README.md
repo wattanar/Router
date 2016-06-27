@@ -4,14 +4,16 @@
 
 $app = new \Wattanar\Gnix();
 
-$app->get("/", "HomeController@index");
+$app->get("/", "\App\Controller\Home@index");
 
 $app->run("/gnix");
 ```
 ```php
 <?php
 
-class HomeController
+namespace App\Controller;
+
+class Home
 {
 	public function index()
 	{
