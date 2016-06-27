@@ -1,12 +1,12 @@
-# Usage
+# How to use
 ```php
 <?php
 
-$app = new \Wattanar\Gnix();
+$app = new \Wattanar\Router();
 
 $app->get("/", "\App\Controller\Home@index");
 
-$app->run("/gnix");
+$app->run("/router");
 ```
 ```php
 <?php
