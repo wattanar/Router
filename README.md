@@ -15,7 +15,7 @@ require 'vendor/autoload.php';
 
 use Wattanar\Router;
 
-Router::get("/", "App\Controller\HomeController::index");
+Router::get("/", "App\Http\Controller\HomeController::index");
 
 Router::run("/router");
 ```
