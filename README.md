@@ -15,14 +15,14 @@ require 'vendor/autoload.php';
 
 use Wattanar\Router;
 
-Router::get("/", "App\Http\Controller\HomeController::index");
+Router::get("/", "App\Http\Controllers\HomeController::index");
 
 Router::run("/router");
 ```
 ```php
 <?php
 
-namespace App\Http\Controller;
+namespace App\Http\Controllers;
 
 class HomeController
 {
