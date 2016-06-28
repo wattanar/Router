@@ -7,19 +7,19 @@
 		public static $routes = [];
 		public static $methods = [];
 
-		public function get($pattern, $callback) 
+		public static function get($pattern, $callback) 
 		{
-			self::$routes[$pattern] = explode("@", $callback);
+			self::$routes[$pattern] = $callback;
 			self::$methods[$pattern] = strtoupper("GET");
 		}
 
-		public function post($pattern, $callback) 
+		public static function post($pattern, $callback) 
 		{
-			self::$routes[$pattern] = explode("@", $callback);
+			self::$routes[$pattern] = $callback;
 			self::$methods[$pattern] = strtoupper("POST");
 		}
 
-		public function run($url = null)
+		public static function run($url = null)
 		{
 			$url = explode("?", str_replace($url, "", $_SERVER["REQUEST_URI"]))[0];
 			$url = str_replace("//", "/", $url);
