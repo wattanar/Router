@@ -38,14 +38,14 @@
 					// Check params
 					if (preg_match('#^' . $route . '$#', $url, $matched)) {
 						// match route method
-						if (self::$methods[$route] === $_SERVER["REQUEST_METHOD"]) {
-							// shift out $matched[0]
-							array_shift($matched);
-							call_user_func_array($callback, $matched);
-							exit;
+						if (self::$methods[$route] !== $_SERVER["REQUEST_METHOD"]) {
+							// Method not match
+							exit("<pre>Method not allow.</pre>");
 						}
-						// Method not match
-						exit("<pre>Method not allow.</pre>");
+						// shift out $matched[0]
+						array_shift($matched);
+						call_user_func_array($callback, $matched);
+						exit;
 					}
 				}
 				// route not found
