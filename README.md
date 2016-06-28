@@ -13,18 +13,18 @@
 
 require 'vendor/autoload.php';
 
-$app = new \Wattanar\Router();
+use Wattanar\Router;
 
-$app->get("/", "\App\Controller\Home@index");
+Router::get("/", "App\Controller\HomeController::index");
 
-$app->run("/router");
+Router::run("/router");
 ```
 ```php
 <?php
 
-namespace App\Controller;
+namespace App\Http\Controller;
 
-class Home
+class HomeController
 {
 	public static function index()
 	{
