@@ -2,7 +2,7 @@
 ```
 {
 	"require" : {
-		"wattanar/router" : "dev-master
+		"wattanar/router" : "dev-master"
 	}
 }
 ```
