@@ -22,7 +22,7 @@
 		public static function run($url = null)
 		{
 			$url = explode("?", str_replace($url, "", $_SERVER["REQUEST_URI"]))[0];
-			$url = str_replace("//", "/", $url);
+			$url = str_replace("//", "/", eval($url));
 			// route exists
 			if (array_key_exists($url, self::$routes)) {
 				// match route method
