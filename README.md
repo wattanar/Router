@@ -15,9 +15,14 @@ require 'vendor/autoload.php';
 
 use Wattanar\Router;
 
-Router::get("/", "App\Http\Controllers\HomeController::index");
+Router::get('/', 'App\Http\Controllers\HomeController::index');
 
-Router::run("/router");
+Router::run();
+
+/* 
+If you run in sub folder you should put your path in.
+Router::run('/path/to/web');
+*/
 ```
 ```php
 <?php
@@ -28,7 +33,7 @@ class HomeController
 {
 	public static function index()
 	{
-		echo "Hello World!";
+		echo 'Hello World!';
 	}
 {
 ```
