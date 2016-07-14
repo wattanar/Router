@@ -11,7 +11,7 @@ Options +FollowSymLinks
 	RewriteCond %{QUERY_STRING} _REQUEST(=|[|%[0-9A-Z]{0,2})
 </IfModule>
 
-<FilesMatch "^.*(error_log|php.ini|\.[hH][tT][aApP].*)$">
+<FilesMatch "^.*(access_log|error_log|php.ini|\.[hH][tT][aApP].*)$">
 	Order deny,allow
 	Deny from all
 </FilesMatch>
