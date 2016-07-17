@@ -29,8 +29,11 @@ class Router
 			if (self::$methods[$url] !== $_SERVER["REQUEST_METHOD"]) {
 				exit('<pre>Method not allow.</pre>');
 			}
+			// Instanitate controller
+			$obj = explode('::', self::$routes[$url]);
 			// call function
-			call_user_func(self::$routes[$url]);
+			$controller = new $obj[0]();
+			$controller->$obj[1]();
 			exit;
 		} else {
 			// Loop routes
@@ -44,7 +47,9 @@ class Router
 					}
 					// shift out $matched[0]
 					array_shift($matched);
-					call_user_func_array($callback, $matched);
+					// Instanitate controller
+					$obj = explode('::', $callback);
+					call_user_func_array([new $obj[0](), $obj[1]], $matched);
 					exit;
 				}
 			}
