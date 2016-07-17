@@ -17,12 +17,8 @@ use Wattanar\Router;
 
 Router::get('/', 'App\Http\Controllers\HomeController::index');
 
-Router::run();
+Router::run(); // or Router::run('/path/to/web');
 
-/* 
-If you run in sub folder you should put your path in.
-Router::run('/path/to/web');
-*/
 ```
 ```php
 <?php
