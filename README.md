@@ -7,11 +7,11 @@
 }
 ```
 
-# How to use
+# Usage
 ```php
 <?php
 
-namespace App\Http\Controllers;
+namespace Controllers;
 
 class HomeController
 {
@@ -28,7 +28,7 @@ require 'vendor/autoload.php';
 
 use Wattanar\Router;
 
-Router::get('/', 'App\Http\Controllers\HomeController::index');
+Router::get('/', 'Controllers\HomeController::index');
 
 Router::run(); // or Router::run('/path/to/web');
 
