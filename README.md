@@ -30,6 +30,6 @@ $app = new \Wattanar\Router;
 
 $app->get('/', 'Controllers\HomeController::index');
 
-$app->run(); // or Router::run('/path/to/web');
+$app->run(); // or $app->run('/path/to/web');
 
 ```
