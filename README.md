@@ -26,10 +26,10 @@ class HomeController
 
 require_once 'vendor/autoload.php';
 
-use Wattanar\Router;
+$app = new \Wattanar\Router;
 
-Router::get('/', 'Controllers\HomeController::index');
+$app->get('/', 'Controllers\HomeController::index');
 
-Router::run(); // or Router::run('/path/to/web');
+$app->run(); // or Router::run('/path/to/web');
 
 ```
