@@ -15,7 +15,7 @@
 # Usage
 ```php
 <?php
-// ./app/controllers/HomeController.php
+
 namespace App\Controllers;
 
 class HomeController
@@ -26,9 +26,10 @@ class HomeController
 	}
 }
 ```
+
 ```php
 <?php
-// ./index.php
+
 require_once 'vendor/autoload.php';
 
 $app = new \Wattanar\Router;
