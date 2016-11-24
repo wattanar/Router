@@ -32,9 +32,9 @@ class Router
 			// Instanitate controller
 			$obj = explode("::", self::$routes[$url]);
 			// call function
-			$controller = new $obj[0]();
-			$controller->$obj[1]();
-			exit;
+			$controller = new $obj[0];
+			$func = $obj[1];
+			exit($controller->$func());
 		} else {
 			// Loop routes
 			foreach (self::$routes as $route => $callback) {
@@ -49,8 +49,7 @@ class Router
 					array_shift($matched);
 					// Instanitate controller
 					$obj = explode("::", $callback);
-					call_user_func_array([new $obj[0](), $obj[1]], $matched);
-					exit;
+					exit(call_user_func_array([new $obj[0](), $obj[1]], $matched));
 				}
 			}
 			// route not found
