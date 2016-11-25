@@ -39,3 +39,25 @@ $app->get('/', 'App\Controllers\HomeController::index');
 $app->run();
 
 ```
+
+# Web Server Configuration
+
+## Apache
+```
+Options All -Indexes
+Options +FollowSymLinks
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+```
+
+## Nginx
+```
+location /myapp/ {
+    try_files $uri $uri/ /myapp/index.php;
+}
+```
