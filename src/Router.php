@@ -4,8 +4,8 @@ namespace Wattanar;
 
 class Router
 {
-	public static $routes = [];
-	public static $methods = [];
+	private static $routes = [];
+	private static $methods = [];
 
 	public static function get($pattern, $callback) 
 	{
