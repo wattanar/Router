@@ -58,6 +58,6 @@ Options +FollowSymLinks
 ## Nginx
 ```
 location /myapp/ {
-    try_files $uri $uri/ /myapp/index.php;
+    try_files $uri $uri/ /myapp/index.php$is_args$args;
 }
 ```
