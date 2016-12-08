@@ -57,7 +57,24 @@ Options +FollowSymLinks
 
 ## Nginx
 ```
-location /myapp/ {
-    try_files $uri $uri/ /myapp/index.php$is_args$args;
+server {
+	listen       3100;
+	server_name  localhost;
+
+	root   html/myweb;
+	index  index.php index.html index.htm;
+
+	location / {
+	    try_files $uri $uri/ /index.php;
+	}
+
+	location ~ \.php$ {
+	    try_files $uri =404;
+	    fastcgi_split_path_info ^(.+\.php)(/.+)$;
+	    fastcgi_pass   127.0.0.1:9123;
+	    fastcgi_index  index.php;
+	    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+	    include        fastcgi_params;
+	}
 }
 ```
