@@ -18,6 +18,18 @@ class Router
 		self::$routes[$pattern] = $callback;
 		self::$methods[$pattern] = "POST";
 	}
+	
+	public static function put($pattern, $callback) 
+	{
+		self::$routes[$pattern] = $callback;
+		self::$methods[$pattern] = "PUT";
+	}
+	
+	public static function delete($pattern, $callback) 
+	{
+		self::$routes[$pattern] = $callback;
+		self::$methods[$pattern] = "DELETE";
+	}
 
 	public static function run($url = null)
 	{
