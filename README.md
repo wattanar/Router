@@ -67,6 +67,10 @@ server {
 	location / {
 	    try_files $uri $uri/ /index.php;
 	}
+	
+	location ~* \.(js|jpg|png|css)$ {
+            expires off;
+        }
 
 	location ~ \.php$ {
 	    try_files $uri =404;
